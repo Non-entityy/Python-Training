@@ -145,7 +145,7 @@
 # tabuleiro[1] = ['pea'] * 8
 # tabuleiro[6] = ['pea'] * 8
 # tabuleiro[7] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
-
+## tabuleiro[7][3], tabuleiro[7][4] = tabuleiro[7][4], tabuleiro[7][3]
 # tabuleiro_np = np.array(tabuleiro)
 
 # for linha in tabuleiro_np:
