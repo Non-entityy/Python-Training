@@ -177,17 +177,73 @@
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #7. Crie uma classe Aluno com atributos nome e nota. Depois crie uma classe Turma que tenha uma lista de alunos e um método adicionar_aluno(aluno). Crie alguns objetos Aluno e adicione-os à turma.
 
-class Aluno:
-    def __init__(self, nome, nota):
-        self.nome = nome
-        self.nota = nota
-class Turma:
-    lista_alunos = []
-        
+# class Aluno:
+#     def __init__(self, nome, nota):
+#         self.nome = nome
+#         self.nota = nota
+# class Turma:
+#     def __init__(self):
+#         self.alunos = []
+#     def adicionar(self, aluno):
+#         self.alunos.append(aluno)
+#     def listar_alunos(self):
+#         for aluno in self.alunos:
+#             print(f"{aluno.nome} - Nota: {aluno.nota}")
+# aluno1 = Aluno('Lucas', 7.6)
+# aluno2 = Aluno('Lisa', 8.5)
+# aluno3 = Aluno('Maria', 7.9)
+
+# turma = Turma()
+# turma.adicionar(aluno1)
+# turma.adicionar(aluno2)
+# turma.adicionar(aluno3)
+
+# turma.listar_alunos()
+
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #8. Na classe Aluno, implemente o método __str__ para que, ao imprimir um objeto da classe, apareça algo como:"Aluno: Maria - Nota: 9.5". Teste imprimindo os objetos.
 
+# class Aluno:
+#     def __init__(self, nome, nota):
+#         self.nome = nome
+#         self.nota = nota
+#     def __str__(self):
+#         return f"{self.nome} - Nota: {self.nota}"
+
+# class Turma:
+#     def __init__(self):
+#         self.alunos = []
+#     def adicionar(self, aluno):
+#         self.alunos.append(aluno)
+#     def listar(self):
+#         for aluno in self.alunos:
+#             print(aluno)
+# aluno1 = Aluno('Lucas', 7.6)
+# aluno2 = Aluno('Lisa', 8.5)
+# aluno3 = Aluno('Maria', 7.9)
+
+# turma = Turma()
+# turma.adicionar(aluno1)
+# turma.adicionar(aluno2)
+# turma.adicionar(aluno3)
+
+# turma.listar()
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #9. Crie uma classe Cachorro com um atributo de classe especie = "Canis familiaris" e atributos de instância nome e idade. Mostre a diferença entre acessar especie pelo objeto e pela classe.
+
+# class Cachorro:
+#     especie = 'Canis familiaris'
+#     def __init__(self, nome, idade,):
+#         self.nome = nome
+#         self.idade = idade
+#     def __str__(self):
+#         return f'Nome: {self.nome} - Idade: {self.idade}'
+# cachorro1 = Cachorro('Black', 1)
+
+# # print(f"Acessando pela classe: {Cachorro.especie}")
+# # print(f"Acessando pelo objeto: {cachorro1.especie}")
+#   print(cachorro1)
+
+    
