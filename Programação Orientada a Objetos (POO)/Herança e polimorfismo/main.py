@@ -83,7 +83,61 @@
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 5. Crie uma classe Funcionario que herda de Usuario e, em seguida, crie uma classe Gerente que herda de Funcionario. Mostre como instanciar um gerente e acessar seus atributos.
-   
+
+# class Usuario:
+#     def __init__(self,nome,email):
+#         self.nome = nome
+#         self.email = email
+
+#     def __str__(self):
+#         return f'\n|Seus Dados|\n Nome: {self.nome}\n Email: {self.email}'
+
+
+# class Funcionario(Usuario):
+#     pass
+# class Gerente(Funcionario):
+#     pass
+# gerente = Gerente('Lucas', 'lucasp@gmail.com')
+# print(gerente.nome)
+# print(gerente.email)
+# print(gerente)
+
+#OR
+
+# class Usuario:
+#     def __init__(self,nome,email):
+#         self.nome = nome
+#         self.email = email
+
+#     def __str__(self):
+#         return f'\n|Seus Dados|\n Nome: {self.nome}\n Email: {self.email}'
+
+# class Funcionario(Usuario):
+#     def __init__(self, nome, email, matricula):
+#         # Chama o construtor da classe base (Usuario)
+#         super().__init__(nome, email)
+#         self.matricula = matricula
+    
+#     def __str__(self):
+#         return f"{super().__str__()}\n Matrícula: {self.matricula}"
+# class Gerente(Funcionario):
+#     def __init__(self, nome, email, matricula, departamento):
+#         # Chama o construtor da classe base (Funcionario)
+#         super().__init__(nome, email, matricula)
+#         self.departamento = departamento
+    
+#     def __str__(self):
+#         return f"{super().__str__()}\n Departamento: {self.departamento}"
+# gerente = Gerente(nome="Lucas Peixoto", email="lucasp@empresa.com", matricula="12345", departamento="TI")
+
+#  Acessando atributos
+# print(gerente.nome)            # Lucas Peixoto
+# print(gerente.email)           # lucasp@empresa.com
+# print(gerente.matricula)       # 12345
+# print(gerente.departamento)   # TI
+
+#  Usando o método __str__ para imprimir a representação do objeto
+# print(gerente)  # Nome: Lucas Peixoto, Email: lucasp@empresa.com, Matrícula: 12345, Departamento: TI
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
