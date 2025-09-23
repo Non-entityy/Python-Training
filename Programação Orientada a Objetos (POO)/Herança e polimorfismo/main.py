@@ -143,8 +143,68 @@
 
 # 6. Crie uma classe Autenticacao com um método login(). Crie outra classe Permissao com um método verificar_permissao(). Em seguida, crie uma classe Administrador que herda de ambas. Como usar os métodos herdados?
 
+# class Autenticacao:
+#     # def __init__(self,usuario, senha):
+#     #     self.usuario = usuario
+#     #     self.senha = senha
+#     # def __str__(self):
+#     #     return f'O {self.usuario} está sendo autenticado...'
+#     def login(self,usuario, senha):
+#         if usuario == 'admin' and senha == '1234':
+#             print(f'Bem-vindo, {usuario}!')
+#             return True
+#         else:
+#             print(f'Usuário ou senha incorreta...')
+#             return False
+
+# class Permissao:
+#     def verificar_permnissao(self, usuario):
+#      if usuario == 'admin':
+#         print(f'Login permitido!')
+#         return True
+#      else:
+#         print(f'Login negado!')
+#         return False
+       
+# class Administrador(Autenticacao,Permissao):
+#         pass
+# admin = Administrador()
+# if admin.login('admin','1234'):
+#     admin.verificar_permnissao('admin') # Chamandos através do objeto funciona normlmente.
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 7. Usando o exemplo anterior, adicione um método status() em Autenticacao e também em Permissao. Se a classe Administrador herda das duas, qual versão de status() será chamada? Use Administrador.__mro__ para mostrar a ordem.
 
+# class Autenticacao:
+
+#     def login(self,usuario, senha):
+#         if usuario == 'admin' and senha == '1234':
+#             print(f'Bem-vindo, {usuario}!')
+#             return True
+#         else:
+#             print(f'Usuário ou senha incorreta...')
+#             return False
+#     def status(self):
+#         print(f'|Status de autenticação|')
+#         print(f'Autenticação bem sucessida.')
+
+# class Permissao:
+#     def verificar_permnissao(self, usuario):
+#      if usuario == 'admin':
+#         print(f'Login permitido!')
+#         return True
+#      else:
+#         print(f'Login negado!')
+#         return False
+#     def status(self):
+#         print(f'|Status de Permissão|')
+#         # if usuario 
+#         # print(f' Permissão revisada.')
+# class Administrador(Autenticacao,Permissao):
+#         pass
+# admin = Administrador()
+# admin.status()
+# print(f'\nOrdem de resolução de métodos (MRO):')
+# for cls in Administrador.__mro__:
+#     print(cls) # A primeira classe na lista de herança tem prioridade.
