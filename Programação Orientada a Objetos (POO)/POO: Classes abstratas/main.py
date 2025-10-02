@@ -17,9 +17,12 @@
 from abc import ABC, abstractmethod
 
 class Pessoa(ABC):
+    @abstractmethod
     def comer():
         pass
+    @abstractmethod
     def andar():
         pass
+    @abstractmethod
     def correr():
-        pass
+        ...
