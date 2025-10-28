@@ -1,0 +1,65 @@
+# Atividade: SQL 1
+
+1. Mostrar todos os registros da tabela Aluno
+SELECT * FROM Aluno;
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Exibir apenas o nome e a nota1 de todos os alunos
+SELECT nome, nota1 FROM Aluno;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 3. Listar todos os alunos cuja nota2 seja maior que 8
+SELECT * FROM Aluno
+WHERE nota2 > 8;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Mostrar os alunos que nasceram após o ano de 2000
+SELECT * FROM Aluno
+WHERE data_nascimento > '2000-12-31';
+
+
+(ou, dependendo do formato do campo de data, WHERE YEAR(data_nascimento) > 2000;)
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Exibir o nome e a mensalidade de todos os cursos que custam mais de 600 reais
+SELECT nome, mensalidade FROM Curso
+WHERE mensalidade > 600;
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Mostrar o nome das turmas e o ano correspondente, ordenados pelo ano (crescente)
+SELECT nome, ano FROM Turma
+ORDER BY ano ASC;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. Listar o ano das turmas e a quantidade de turmas por ano
+SELECT ano, COUNT(*) AS quantidade_turmas
+FROM Turma
+GROUP BY ano;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Calcular a média da nota1 dos alunos por turma_id
+SELECT turma_id, AVG(nota1) AS media_nota1
+FROM Aluno
+GROUP BY turma_id;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9. Mostrar o ano e a quantidade de turmas, apenas para os anos que têm mais de 2 turmas
+SELECT ano, COUNT(*) AS quantidade_turmas
+FROM Turma
+GROUP BY ano
+HAVING COUNT(*) > 2;
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Exibir o nome dos cursos e suas mensalidades, ordenando primeiro pela mensalidade (decrescente)
+SELECT nome, mensalidade
+FROM Curso
+ORDER BY mensalidade DESC;
