@@ -1,0 +1,32 @@
+#Atividade: SQL Funções e filtros
+
+# 1. COUNT Mostre quantos alunos estão cadastrados na tabela Aluno. (Use a função COUNT)
+SELECT count(*) AS Total
+FROM "Aluno"; # Resultado: 200 Alunos
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 2. MIN Mostre a menor mensalidade entre todos os cursos cadastrados. (Use a função MIN)
+
+SELECT min(mensalidade) AS Menor_Mensalidade
+FROM "Curso"; # Rsultado: R$ 600 
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 3. MAX Mostre a maior nota1 registrada entre todos os alunos. (Use a função MAX)
+
+SELECT max(nota1) AS Maior_Nota1
+FROM "Aluno"; # Resposta: 9.99
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 4. SUM Calcule o valor total das mensalidades de todos os cursos. (Use a função SUM)
+
+SELECT sum(mensalidade) AS Soma_Mensalidades
+FROM "Curso"; # Resposta: 4080
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 5. AVG Mostre a média geral da nota2 dos alunos. (Use a função AVG)
+
+SELECT avg(nota2) AS Media_Nota2
+FROM "Aluno"; # Resposta: 5.00055
+
+# CASO QUEIRA VER O RESTANTE DA INFORMAÇÂO COMO NOME, DATA_NASCIMENTO, NOTA1, NOTA2... BASTA COLOCAR UMA VIRGULA E *. EXEMPLO: SELECT max(nota1) AS Maior_Nota1, * FROM "Aluno";
+# OBS: ISSO FUNCIONA APENAS EM CASOS ESPECIFICOS, COMO SELECIONAR NOTAS MAX E MIN.
