@@ -27,21 +27,24 @@ for i, (nome, media) in enumerate(top10, start= 1):
 '''
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 4. Use Left Join com as tabelas Aluno e Turma e imprima todos os dados da tabela.
+'''
 
 cursor.execute("SELECT * FROM Aluno a LEFT JOIN Turma t on a.id_turma = t.id;")
 tabela = cursor.fetchall()
-print(f'')
+print(f'{"ID":^5}| {"Nome":^20}  | {"Data de Nascimento":^10}| {"Nota 1":^5}| {"Nota 2":^5}| {"Id Turma Aluno":^5}| {"Id Turma":^5} | {"Nome da Turma":^18}| {"Semestre":^5}|{"Ano":^5}| {"Id do Curso":^5}')
 for id, nome, data_nascimento, nota1, nota2, id_turma, idt, nome_turma, semestre, ano, id_curso in tabela:
-    print(f'{"ID":<5}| {"Nome":<10}| {"Data de Nascimento":<10}| {"Nota 1":<5}| {"Nota 2":<5}| {"Id Turma Aluno":<10}| {"Id Turma":<10}| {"Nome da Turma":<10}| {"Semestre":<5}| {"Ano":<5}| {"Id do Curso":<5}\n'
-          f'{"-"*5}  | {"-"*10}    | {"-"*10}                  | {"-"*5}      | {"-"*5}      | {"-"*10}              | {"-"*5}         | {"-"*10}| {"-"*5}    | {"-"*5}        | {"-"*5}\n'
-          f'{id:<10} | {nome:<20}  | {data_nascimento:<20}     | {nota1:<10}  | {nota2:<10}  | {id_turma:<20}        | {idt:<10}       | {nome_turma:<20}     | {semestre:<10} | {ano:<10} | {id_curso:<10}')
-
-    
-'''
+    print(f'{"-"*5}|{"-"*23}|{"-"*19}|{"-"*7}|{"-"*7}|{"-"*15}|{"-"*10}|{"-"*19}|{"-"*9}|{"-"*5}|{"-"*10}\n'
+          f'{id:^5}| {nome:^20}  | {data_nascimento:^13}     | {nota1:^4}  | {nota2:^4}  | {id_turma:^5}         | {idt:^5}    | {nome_turma:^18}| {semestre:^6}  | {ano:^2}| {id_curso:^5}')
 
 '''
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 5. Usando a query da questão 4, adicione um filtro para pegar apenas os alunos da turma 2 e imprima na tela.
 '''
+cursor.execute("SELECT * FROM Aluno a LEFT JOIN Turma t on a.id_turma = t.id WHERE a.id_turma = 2 ")
+tabela = cursor.fetchall()
+print(f'{"ID":^5}| {"Nome":^20}  | {"Data de Nascimento":^10}| {"Nota 1":^5}| {"Nota 2":^5}| {"Id Turma Aluno":^5}| {"Id Turma":^5} | {"Nome da Turma":^18}| {"Semestre":^5}|{"Ano":^5}| {"Id do Curso":^5}')
+for id, nome, data_nascimento, nota1, nota2, id_turma, idt, nome_turma, semestre, ano, id_curso in tabela:
+    print(f'{"-"*5}|{"-"*23}|{"-"*19}|{"-"*7}|{"-"*7}|{"-"*15}|{"-"*10}|{"-"*19}|{"-"*9}|{"-"*5}|{"-"*10}\n'
+          f'{id:^5}| {nome:^20}  | {data_nascimento:^13}     | {nota1:^4}  | {nota2:^4}  | {id_turma:^5}         | {idt:^5}    | {nome_turma:^10} | {semestre:^6}  | {ano:^2}| {id_curso:^5}')
 
 '''
