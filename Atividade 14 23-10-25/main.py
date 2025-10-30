@@ -28,9 +28,15 @@ for i, (nome, media) in enumerate(top10, start= 1):
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 4. Use Left Join com as tabelas Aluno e Turma e imprima todos os dados da tabela.
 
-cursor.execute("SELECT *
-FROM Aluno a LEFT JOIN Turma t on a.id_turma = t.id;")
+cursor.execute("SELECT * FROM Aluno a LEFT JOIN Turma t on a.id_turma = t.id;")
+tabela = cursor.fetchall()
+print(f'')
+for id, nome, data_nascimento, nota1, nota2, id_turma, idt, nome_turma, semestre, ano, id_curso in tabela:
+    print(f'{"ID":<5}| {"Nome":<10}| {"Data de Nascimento":<10}| {"Nota 1":<5}| {"Nota 2":<5}| {"Id Turma Aluno":<10}| {"Id Turma":<10}| {"Nome da Turma":<10}| {"Semestre":<5}| {"Ano":<5}| {"Id do Curso":<5}\n'
+          f'{"-"*5}  | {"-"*10}    | {"-"*10}                  | {"-"*5}      | {"-"*5}      | {"-"*10}              | {"-"*5}         | {"-"*10}| {"-"*5}    | {"-"*5}        | {"-"*5}\n'
+          f'{id:<10} | {nome:<20}  | {data_nascimento:<20}     | {nota1:<10}  | {nota2:<10}  | {id_turma:<20}        | {idt:<10}       | {nome_turma:<20}     | {semestre:<10} | {ano:<10} | {id_curso:<10}')
 
+    
 '''
 
 '''
