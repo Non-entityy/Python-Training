@@ -1,0 +1,8 @@
+{
+    "mdb.presetConnections": [
+        {
+            "name": "Preset Connection",
+            "connectionString": "mongodb+srv://Non-entityy:Vitorz23.@cluster0.tqpgj17.mongodb.net/"
+        }
+    ]
+}
